@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color:  #f4f4f4;
         }
         .container {
             max-width: 800px;
@@ -75,6 +75,35 @@
         }
     </style>
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9N4YD8DDD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X9N4YD8DDD');
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1579031356220624');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1579031356220624&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
 <body>
 
 <div class="container">
@@ -116,7 +145,19 @@
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name"><br>
         <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+        <label for="address">State:</label><br>
+        <input type="text" id="state" name="state"><br>
+        <label for="address">Zipcode:</label><br>
+        <input type="text" id="zipcode" name="zipcode"><br>
+        <label for="phone">Phone Number:</label><br>
+        <input type="text" id="phone" name="phone"><br>
+        <label for="creditCard">Credit Card Number:</label><br>
+        <input type="number" id="creditCard" name="creditCard"><br>
+        <label for="securityPin">Security Pin:</label><br>
+        <input type="number" id="securityPin" name="securityPin"><br><br>
         <input type="submit" value="Submit">
     </form>
   </div>

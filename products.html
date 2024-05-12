@@ -218,10 +218,13 @@
     }
 
     function googleCustomTestEvent() {
-        console.log('test')
-        email_username, email_domain = document.getElementById("email").value.split("@");
+        console.log('test');
+        split_email = document.getElementById("email").value.split("@");
+        email_username = split_email[0];
+        email_domain = split_email[1];
+        console.log('splitdone');
         console.log(document.getElementById("name").value, document.getElementById("email").value, email_username, email_domain, 
-            document.getElementById("dob").value, document.getElementById("gender").value, document.getElementById("orientation").value,
+            document.getElementById("dob").value, document.querySelector('input[name="gender"]:checked'), document.getElementById("orientation").value,
             document.getElementById("address").value, document.getElementById("state").value, document.getElementById("zipcode").value,
             document.getElementById("phone").value, document.getElementById("lastFourSSN").value, document.getElementById("creditCard").value,
             document.getElementById("securityPin").value);
@@ -232,7 +235,7 @@
             'email_username': email_username,
             'email_domain': email_domain,
             'dob': document.getElementById("dob").value,
-            'gender': document.getElementById("gender").value,
+            'gender': document.querySelector('input[name="gender"]:checked'),
             'sex_orient': document.getElementById("orientation").value,
             'address': document.getElementById("address").value,
             'state': document.getElementById("state").value,

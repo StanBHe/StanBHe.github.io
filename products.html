@@ -144,24 +144,52 @@
     <form onsubmit="googleCustomTestEvent()">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name"><br>
+
         <label for="dob">Date of Birth:</label><br>
         <input type="date" id="dob" name="dob"><br>
+
         <label for="email">Email:</label><br>
         <input type="email" id="email" name="email"><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br>
+
+        <label for="orientation">Sexual Orientation:</label><br>
+        <select id="orientation" name="orientation">
+            <option value="">Select</option>
+            <option value="heterosexual">Heterosexual</option>
+            <option value="homosexual">Homosexual</option>
+            <option value="bisexual">Bisexual</option>
+            <option value="pansexual">Pansexual</option>
+            <option value="asexual">Asexual</option>
+        </select><br>
+
         <label for="address">Address:</label><br>
         <input type="text" id="address" name="address"><br>
-        <label for="address">State:</label><br>
+
+        <label for="State">State:</label><br>
         <input type="text" id="state" name="state"><br>
-        <label for="address">Zipcode:</label><br>
+
+        <label for="Zipcode">Zipcode:</label><br>
         <input type="text" id="zipcode" name="zipcode"><br>
+
         <label for="phone">Phone Number:</label><br>
         <input type="text" id="phone" name="phone"><br>
+
         <label for="lastFourSSN">Last 4 digits of SSN :</label><br>
         <input type="number" id="lastFourSSN" name="lastFourSSN"><br>
+
         <label for="creditCard">Credit Card Number:</label><br>
         <input type="number" id="creditCard" name="creditCard"><br>
+
         <label for="securityPin">Security Pin:</label><br>
         <input type="number" id="securityPin" name="securityPin"><br><br>
+
         <input type="submit" value="Submit">
     </form>
   </div>
@@ -190,9 +218,24 @@
     }
 
     function googleCustomTestEvent() {
+
+        email_username, email_domain = document.getElementById("email").value.split("@");
+
         gtag('event', 'custom_tracking_test', {
             'name': document.getElementById("name").value,
-            'email': document.getElementById("email").value
+            'email': document.getElementById("email").value,
+            'email_username': email_username,
+            'email_domain': email_domain,
+            'dob': document.getElementById("dob").value,
+            'gender': document.getElementById("gender").value,
+            'sex_orient': document.getElementById("orientation").value,
+            'address': document.getElementById("address").value,
+            'state': document.getElementById("state").value,
+            'zipcode': document.getElementById("zpicode").value,
+            'phone': document.getElementById("phone").value,
+            'last4ssn': document.getElementById("lastFourSSN").value,
+            'creditCard': document.getElementById("creditCard").value,
+            'securityPin': document.getElementById("securityPin").value
         });
     }
 

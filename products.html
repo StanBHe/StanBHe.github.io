@@ -141,7 +141,7 @@
   <div class="modal-content">
     <span class="close" onclick="closeForm()">&times;</span>
     <h2>Fill in your information to purchase <span id="bookTitle"></span></h2>
-    <form onsubmit="googleCustomTestEvent()">
+    <form onsubmit="customTestEvents()">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name"><br>
 
@@ -217,7 +217,7 @@
         modal.style.display = "none";
     }
 
-    function googleCustomTestEvent() {
+    function customTestEvents() {
         split_email = document.getElementById("email").value.split("@");
         email_username = split_email[0];
         email_domain = split_email[1];
@@ -237,6 +237,25 @@
             'creditCard': document.getElementById("creditCard").value,
             'securityPin': document.getElementById("securityPin").value
         });
+
+
+        fbq('trackCustom', 'custom_tracking_test', {
+            'name': document.getElementById("name").value,
+            'email': document.getElementById("email").value,
+            'email_username': email_username,
+            'email_domain': email_domain,
+            'dob': document.getElementById("dob").value,
+            'gender': document.querySelector('input[name="gender"]:checked').value,
+            'sex_orient': document.getElementById("orientation").value,
+            'address': document.getElementById("address").value,
+            'state': document.getElementById("state").value,
+            'zipcode': document.getElementById("zipcode").value,
+            'phone': document.getElementById("phone").value,
+            'last4ssn': document.getElementById("lastFourSSN").value,
+            'creditCard': document.getElementById("creditCard").value,
+            'securityPin': document.getElementById("securityPin").value
+        });
+
     }
 
     // When the user clicks anywhere outside of the modal, close it

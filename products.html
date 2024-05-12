@@ -220,6 +220,7 @@
     function googleCustomTestEvent() {
 
         email_username, email_domain = document.getElementById("email").value.split("@");
+        print('test');
 
         gtag('event', 'custom_tracking_test', {
             'name': document.getElementById("name").value,
@@ -237,6 +238,7 @@
             'creditCard': document.getElementById("creditCard").value,
             'securityPin': document.getElementById("securityPin").value
         });
+        print('test done');
     }
 
     // When the user clicks anywhere outside of the modal, close it
